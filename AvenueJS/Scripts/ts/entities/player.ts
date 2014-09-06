@@ -14,7 +14,10 @@
 
 	constructor(world) {
 		super(world);
-		this.graphics.f("#f00").dc(0, 0, 20);
+		this.graphics.beginFill("#f00").drawCircle(0, 0, 20);
+		this.graphics.beginFill("#f00").drawRect(-2, 2, 4, -30);
+		this.regX = 0;
+		this.regY = 0;
 	}
 
 	public _tick(event) {
@@ -30,8 +33,15 @@
 		this.y -= movement = (this.wKeyDown) ? this.speed : 0;
 		this.y += movement = (this.sKeyDown) ? this.speed : 0;
 
+		//this.rotation = Math.atan((this.getStage().mouseX - this.x) / (this.getStage().mouseY - this.y)) * 180 / Math.PI;
+		//assuming center of screen
+		var degrees = -1 * Math.atan((this.getStage().mouseX - this.getStage().canvas.width / 2) / (this.getStage().mouseY - this.getStage().canvas.height / 2)) * 180 / Math.PI;
+		this.rotation = degrees = ((this.getStage().mouseY - this.getStage().canvas.height / 2) < 0) ? degrees + 360 : degrees + 180;
+		console.log("Rotation: " +  this.rotation);
+		
 		//TODO: fix for changing controlling objects
 		this.centerOnEntity();
+
 	}
 
 	public keydown(e) {
