@@ -14,11 +14,9 @@ namespace AvenueJS
 						"~/Scripts/jquery.signalR-2.1.1.min.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/ts").Include(
-						"~/Scripts/ts/*.js",
-						"~/Scripts/ts/entities/terrain.js",
-						"~/Scripts/ts/entities/weapon.js",
-						"~/Scripts/ts/entities/projectile.js",
 						"~/Scripts/ts/entities/character.js",
+						"~/Scripts/ts/player.js",
+						"~/Scripts/ts/*.js",
 						"~/Scripts/ts/entities/*.js"
 						));
 

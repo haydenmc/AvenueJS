@@ -176,7 +176,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\js\" />
-    <Folder Include="Scripts\ts\entities\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -189,9 +188,13 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\endgate-0.2.1.d.ts" />
     <TypeScriptCompile Include="Scripts\ts\debug.ts" />
+    <TypeScriptCompile Include="Scripts\ts\entities\BlasterBullet.ts" />
+    <TypeScriptCompile Include="Scripts\ts\entities\character.ts" />
+    <TypeScriptCompile Include="Scripts\ts\entities\rock.ts" />
     <TypeScriptCompile Include="Scripts\ts\game.ts" />
     <TypeScriptCompile Include="Scripts\ts\hub.ts" />
     <TypeScriptCompile Include="Scripts\ts\main.ts" />
+    <TypeScriptCompile Include="Scripts\ts\world.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\signalr\signalr.d.ts" />
   </ItemGroup>
