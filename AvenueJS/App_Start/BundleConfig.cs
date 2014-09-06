@@ -13,7 +13,12 @@ namespace AvenueJS
 
 			bundles.Add(new ScriptBundle("~/bundles/ts").Include(
 						"~/Scripts/ts/*.js",
-						"~/Scripts/ts/entities/*.js"));
+
+						"~/Scripts/ts/entities/terrain.js",
+						"~/Scripts/ts/entities/projectile.js",
+						"~/Scripts/ts/entities/character.js",
+						"~/Scripts/ts/entities/*.js"
+						));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/site.css"));

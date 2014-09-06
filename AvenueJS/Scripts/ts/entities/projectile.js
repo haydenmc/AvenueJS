@@ -6,8 +6,8 @@
 };
 var Projectile = (function (_super) {
     __extends(Projectile, _super);
-    function Projectile() {
-        _super.call(this);
+    function Projectile(world) {
+        _super.call(this, world);
     }
     return Projectile;
 })(GameEntity);

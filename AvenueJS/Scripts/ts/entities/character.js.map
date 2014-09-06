@@ -1,1 +1,1 @@
-{"version":3,"file":"character.js","sourceRoot":"","sources":["character.ts"],"names":["Character","Character.constructor"],"mappings":";;;;;;AAAA;IAAwBA,4BAAUA;IACjCA;QACCC,WAAMA,KAAAA,CAACA;IACRA,CAACA;IACFD,iBAACA;AAADA,CAACA,EAJuB,UAAU,EAIjC"}
+{"version":3,"file":"character.js","sourceRoot":"","sources":["character.ts"],"names":["Character","Character.constructor"],"mappings":";;;;;;AAAA;IAAwBA,4BAAUA;IACjCA,mBAAYA,KAAKA;QAChBC,WAAMA,OAAAA,KAAKA,CAACA;IACbA,CAACA;IACFD,iBAACA;AAADA,CAACA,EAJuB,UAAU,EAIjC"}

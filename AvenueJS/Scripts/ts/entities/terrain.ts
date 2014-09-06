@@ -1,4 +1,4 @@
-﻿class Character extends GameEntity {
+﻿class Terrain extends GameEntity {
 	constructor(world) {
 		super(world);
 	}

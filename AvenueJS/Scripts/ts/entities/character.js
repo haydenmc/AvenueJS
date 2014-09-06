@@ -6,8 +6,8 @@
 };
 var Character = (function (_super) {
     __extends(Character, _super);
-    function Character() {
-        _super.call(this);
+    function Character(world) {
+        _super.call(this, world);
     }
     return Character;
 })(GameEntity);
