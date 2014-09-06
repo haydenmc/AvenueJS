@@ -6,9 +6,10 @@
 };
 var Rock = (function (_super) {
     __extends(Rock, _super);
-    function Rock(x, y, world) {
+    function Rock(x, y, size, world) {
         _super.call(this, world);
-        this.graphics.f("#000").dc(x, y, 600);
+        this.size = 200;
+        this.graphics.f("#000").dc(x, y, size = (size <= 0) ? this.size : size);
     }
     return Rock;
 })(Terrain);

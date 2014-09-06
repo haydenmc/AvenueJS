@@ -1,5 +1,5 @@
 ﻿class Player extends Character {
-	private speed: number = 10;
+	public speed: number = 10;
 
 	private wKey: number = 87;
 	private aKey: number = 65;
@@ -20,11 +20,18 @@
 	public _tick(event) {
 
 		//smooth movement
-		this.x += (this.dKeyDown) ? this.speed : 0;
-		this.x -= (this.aKeyDown) ? this.speed : 0;
-		this.y -= (this.wKeyDown) ? this.speed : 0;
-		this.y += (this.sKeyDown) ? this.speed : 0;
+		this.controllerXOffset = 0;
+		this.controllerYOffest = 0;
 
+		var movement:number;
+
+		this.x += movement = (this.dKeyDown) ? this.speed : 0;
+		this.x -= movement = (this.aKeyDown) ? this.speed : 0;
+		this.y -= movement = (this.wKeyDown) ? this.speed : 0;
+		this.y += movement = (this.sKeyDown) ? this.speed : 0;
+
+		//TODO: fix for changing controlling objects
+		this.centerOnEntity();
 	}
 
 	public keydown(e) {

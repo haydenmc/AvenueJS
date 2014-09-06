@@ -32,9 +32,10 @@ class World {
 	}
 
 	public initWorld() {
-		this.initPlayer();
+		//order determins draw order
 		this.initTerrain();
 
+		this.initPlayer();
 	}
 
 	private initPlayer() {
@@ -44,10 +45,10 @@ class World {
 	}
 
 	private initTerrain() {
-		this.addChild(new Rock(500, 500, this));
-		this.addChild(new Rock(500, -500, this));
-		this.addChild(new Rock(-500, 500, this));
-		this.addChild(new Rock(-500, -500, this));
+		this.addChild(new Rock(500, 500, 150, this));
+		this.addChild(new Rock(500, -500, 150,this));
+		this.addChild(new Rock(-500, 500, 150,this));
+		this.addChild(new Rock(-500, -500, 150,this));
 	}
 
 	private addChild(child) {
@@ -56,8 +57,10 @@ class World {
 	}
 
 	private tick(event: Event) {
-		this.container.x = -this.controllerEntity.x + this.stage.canvas.width / 2;
-		this.container.y = -this.controllerEntity.y + this.stage.canvas.height / 2;
+
+		//this.container.x = -this.controllerEntity.x - this.controllerEntity.controllerXOffset + this.stage.canvas.width / 2;
+		//this.container.y = -this.controllerEntity.y - this.controllerEntity.controllerYOffest + this.stage.canvas.height / 2;
+
 		this.stage.update();
 	}
 

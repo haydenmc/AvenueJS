@@ -8,6 +8,9 @@ var GameEntity = (function (_super) {
     __extends(GameEntity, _super);
     function GameEntity(world) {
         _super.call(this);
+        this.speed = 0;
+        this.controllerXOffset = 0;
+        this.controllerYOffest = 0;
         this.world = world;
         this.graphics = new createjs.Graphics();
 
@@ -17,6 +20,13 @@ var GameEntity = (function (_super) {
     };
 
     GameEntity.prototype.keyup = function (e) {
+    };
+
+    GameEntity.prototype.centerOnEntity = function () {
+        this.parent.x = -this.x + this.getStage().canvas.width / 2;
+        this.parent.y = -this.y + this.getStage().canvas.height / 2;
+
+        console.log("X GameEntity offset: " + this.controllerXOffset);
     };
     return GameEntity;
 })(createjs.Shape);

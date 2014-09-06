@@ -15,8 +15,6 @@
 		this.resizeCanvas();
 		this.world = new World(this.canvas);
 
-
-
 	}
 
 	public resizeCanvas() {

@@ -25,8 +25,10 @@
         console.log("WORLD");
     }
     World.prototype.initWorld = function () {
-        this.initPlayer();
+        //order determins draw order
         this.initTerrain();
+
+        this.initPlayer();
     };
 
     World.prototype.initPlayer = function () {
@@ -36,10 +38,10 @@
     };
 
     World.prototype.initTerrain = function () {
-        this.addChild(new Rock(500, 500, this));
-        this.addChild(new Rock(500, -500, this));
-        this.addChild(new Rock(-500, 500, this));
-        this.addChild(new Rock(-500, -500, this));
+        this.addChild(new Rock(500, 500, 150, this));
+        this.addChild(new Rock(500, -500, 150, this));
+        this.addChild(new Rock(-500, 500, 150, this));
+        this.addChild(new Rock(-500, -500, 150, this));
     };
 
     World.prototype.addChild = function (child) {
@@ -48,8 +50,8 @@
     };
 
     World.prototype.tick = function (event) {
-        this.container.x = -this.controllerEntity.x + this.stage.canvas.width / 2;
-        this.container.y = -this.controllerEntity.y + this.stage.canvas.height / 2;
+        //this.container.x = -this.controllerEntity.x - this.controllerEntity.controllerXOffset + this.stage.canvas.width / 2;
+        //this.container.y = -this.controllerEntity.y - this.controllerEntity.controllerYOffest + this.stage.canvas.height / 2;
         this.stage.update();
     };
 
