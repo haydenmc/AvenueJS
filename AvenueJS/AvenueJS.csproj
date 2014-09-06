@@ -164,7 +164,12 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\ts\entities\character.ts" />
+    <TypeScriptCompile Include="Scripts\ts\entities\worldobject.ts" />
+    <TypeScriptCompile Include="Scripts\ts\entity.ts" />
     <TypeScriptCompile Include="Scripts\ts\main.ts" />
+    <TypeScriptCompile Include="Scripts\ts\entities\projectile.ts" />
+    <TypeScriptCompile Include="Scripts\ts\entities\weapon.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs\createjs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />

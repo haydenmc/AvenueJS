@@ -12,7 +12,8 @@ namespace AvenueJS
 						"~/Scripts/js/createjs-2013.12.12.min.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/ts").Include(
-						"~/Scripts/ts/main.js"));
+						"~/Scripts/ts/*.js",
+						"~/Scripts/ts/entities/*.js"));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/site.css"));
