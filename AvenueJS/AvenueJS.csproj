@@ -151,8 +151,10 @@
     <Content Include="Content\site.min.css">
       <DependentUpon>site.css</DependentUpon>
     </Content>
+    <Content Include="Content\tiles\dg_edging132.gif" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Content\tiles\tile.json" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
@@ -195,6 +197,7 @@
     <TypeScriptCompile Include="Scripts\ts\main.ts" />
     <TypeScriptCompile Include="Scripts\ts\entities\projectile.ts" />
     <TypeScriptCompile Include="Scripts\ts\entities\weapon.ts" />
+    <TypeScriptCompile Include="Scripts\ts\tilemap.ts" />
     <TypeScriptCompile Include="Scripts\ts\world.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs\createjs.d.ts" />

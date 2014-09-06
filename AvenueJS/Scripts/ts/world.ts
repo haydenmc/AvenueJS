@@ -6,6 +6,7 @@ class World {
 	private container: createjs.Container;
 	private playerCharacter: Character;
 	private controllerEntity: GameEntity;
+	private map: TileMap;
 
 	constructor(canvas) {
 
@@ -34,11 +35,14 @@ class World {
 
 	public initWorld() {
 		//order determins draw order
+		this.initMap();
 		this.initTerrain();
-
 		this.initPlayer();
 	}
 
+	private initMap() {
+		this.map = new TileMap(this.container);
+	}
 	private initPlayer() {
 		this.playerCharacter = new Player(this);
 		this.controllerEntity = this.playerCharacter;
