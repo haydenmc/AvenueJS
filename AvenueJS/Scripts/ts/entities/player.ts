@@ -5,6 +5,11 @@
 	private aKey: number = 65;
 	private sKey: number = 83;
 	private dKey: number = 68;
+
+	private wKeyDown: boolean = false;
+	private aKeyDown: boolean = false;
+	private sKeyDown: boolean = false;
+	private dKeyDown: boolean = false;
 	
 
 	constructor(world) {
@@ -12,26 +17,46 @@
 		this.graphics.f("#f00").dc(0, 0, 20);
 	}
 
-	public keyup(e) {
+	public _tick(event) {
 
-		switch (e.keyCode)
-		{
-			case this.wKey:
-				this.y -= this.speed;
-				break;
-			case this.aKey:
-				this.x -= this.speed;
-				break;
-			case this.sKey:
-				this.y += this.speed;
-				break;
-			case this.dKey:
-				this.x += this.speed;
-				break;
-		}
+		//smooth movement
+		//this.x += (this.dKeyDown) ? 
+
 	}
 
 	public keydown(e) {
 
+		switch (e.keyCode)
+		{
+			case this.wKey:
+				this.wKeyDown = true;
+				break;
+			case this.aKey:
+				this.aKeyDown = true;
+				break;
+			case this.sKey:
+				this.sKeyDown = true;
+				break;
+			case this.dKey:
+				this.dKeyDown = true;
+				break;
+		}
+	}
+
+	public keyup(e) {
+		switch (e.keyCode) {
+			case this.wKey:
+				this.wKeyDown = false;
+				break;
+			case this.aKey:
+				this.aKeyDown = false;
+				break;
+			case this.sKey:
+				this.sKeyDown = false;
+				break;
+			case this.dKey:
+				this.dKeyDown = false;
+				break;
+		}
 	}
 } 
