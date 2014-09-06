@@ -15,6 +15,7 @@ namespace AvenueJS
 						"~/Scripts/ts/*.js",
 
 						"~/Scripts/ts/entities/terrain.js",
+						"~/Scripts/ts/entities/weapon.js",
 						"~/Scripts/ts/entities/projectile.js",
 						"~/Scripts/ts/entities/character.js",
 						"~/Scripts/ts/entities/*.js"

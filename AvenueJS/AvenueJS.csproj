@@ -179,6 +179,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\ts\entities\blasterbullet.ts" />
+    <TypeScriptCompile Include="Scripts\ts\entities\blasterweapon.ts" />
     <TypeScriptCompile Include="Scripts\ts\entities\character.ts" />
     <TypeScriptCompile Include="Scripts\ts\entities\player.ts" />
     <TypeScriptCompile Include="Scripts\ts\entities\rock.ts" />

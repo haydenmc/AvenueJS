@@ -25,6 +25,7 @@ class World {
 
 		window.onkeydown = (e) => { this.keydown(e); };
 		window.onkeyup = (e) => { this.keyup(e); };
+		window.onmousedown = (e) => { this.mousedown(e)};
 
 		console.log("WORLD");
 
@@ -51,7 +52,7 @@ class World {
 		this.addChild(new Rock(-500, -500, 150,this));
 	}
 
-	private addChild(child) {
+	public addChild(child) {
 		this.container.addChild(child);
 		this.worldObjects.push(child);
 	}
@@ -74,6 +75,9 @@ class World {
 	public keyup(e) {
 		this.controllerEntity.keyup(e);
 		console.log("Key Up: " + e.keyCode);
+	}
 
+	public mousedown(e) {
+		this.controllerEntity.mousedown(e);
 	}
 }
