@@ -1,7 +1,7 @@
 ﻿class Main {
 	static instance: Main;
 	private canvas: HTMLCanvasElement;
-	private world: World;
+	private game: Game;
 	public hub: Hub;
 
 	constructor() {
@@ -13,7 +13,7 @@
 	public init() {
 		// Initialize the canvas size.
 		this.resizeCanvas();
-		this.world = new World(this.canvas);
+		this.game = new Game(this.canvas);
 		// Instantiate the SignalR Hub.
 		this.hub = new Hub();
 		this.hub.connect();
