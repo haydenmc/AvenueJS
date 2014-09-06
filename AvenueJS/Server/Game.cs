@@ -33,9 +33,18 @@ namespace AvenueJS.Server
 			}
 		}
 
+		public void NewPlayer(Client client)
+		{
+			var p = new Player();
+			Entities.Add(p);
+		}
+
 		private void Update(long id)
 		{
-			
+			foreach (var entity in Entities)
+			{
+				entity.Update();
+			}
 		}
 	}
 }
