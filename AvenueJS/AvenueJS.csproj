@@ -138,6 +138,7 @@
     </Compile>
     <Compile Include="Server\Client.cs" />
     <Compile Include="Server\Entities\GameEntity.cs" />
+    <Compile Include="Server\Entities\Player.cs" />
     <Compile Include="Server\Game.cs" />
     <Compile Include="Server\GameHub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
