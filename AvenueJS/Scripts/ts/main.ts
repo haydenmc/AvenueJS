@@ -11,9 +11,10 @@
 	}
 
 	public init() {
+		// Initialize the canvas size.
 		this.resizeCanvas();
 		this.world = new World(this.canvas);
-		
+
 
 
 	}
