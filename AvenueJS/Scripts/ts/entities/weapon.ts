@@ -1,5 +1,5 @@
 ﻿class Weapon extends GameEntity {
-	constructor() {
-		super();
+	constructor(world) {
+		super(world);
 	}
 } 

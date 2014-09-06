@@ -6,8 +6,8 @@
 };
 var Weapon = (function (_super) {
     __extends(Weapon, _super);
-    function Weapon() {
-        _super.call(this);
+    function Weapon(world) {
+        _super.call(this, world);
     }
     return Weapon;
 })(GameEntity);

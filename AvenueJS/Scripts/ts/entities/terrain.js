@@ -4,11 +4,11 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var WorldObject = (function (_super) {
-    __extends(WorldObject, _super);
-    function WorldObject() {
-        _super.call(this);
+var Terrain = (function (_super) {
+    __extends(Terrain, _super);
+    function Terrain(world) {
+        _super.call(this, world);
     }
-    return WorldObject;
+    return Terrain;
 })(GameEntity);
-//# sourceMappingURL=worldobject.js.map
+//# sourceMappingURL=terrain.js.map

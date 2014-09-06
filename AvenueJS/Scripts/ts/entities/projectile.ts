@@ -1,5 +1,5 @@
 ﻿class Projectile extends GameEntity {
-	constructor() {
-		super();
+	constructor(world) {
+		super(world);
 	}
 } 
