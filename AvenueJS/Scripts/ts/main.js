@@ -12,6 +12,9 @@
         this.stage.addChild(this.container); // Add global container to stage.
         createjs.Ticker.setFPS(60);
         createjs.Ticker.addEventListener("tick", this.tick);
+
+        window.onkeydown = this.keydown;
+        window.onkeyup = this.keyup;
     };
 
     Main.prototype.resizeCanvas = function () {
@@ -20,6 +23,14 @@
     };
 
     Main.prototype.tick = function (event) {
+    };
+
+    Main.prototype.keydown = function (e) {
+        console.log("Key Down: " + e.keyCode);
+    };
+
+    Main.prototype.keyup = function (e) {
+        console.log("Key Up: " + e.keyCode);
     };
     return Main;
 })();
