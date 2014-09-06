@@ -20,7 +20,10 @@
 	public _tick(event) {
 
 		//smooth movement
-		//this.x += (this.dKeyDown) ? 
+		this.x += (this.dKeyDown) ? this.speed : 0;
+		this.x -= (this.aKeyDown) ? this.speed : 0;
+		this.y -= (this.wKeyDown) ? this.speed : 0;
+		this.y += (this.sKeyDown) ? this.speed : 0;
 
 	}
 
