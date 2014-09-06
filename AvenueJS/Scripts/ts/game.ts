@@ -9,7 +9,7 @@
 
 	constructor(canvas: HTMLCanvasElement) {
 		super(canvas);
-		this.character = new Character(new eg.Vector2d(canvas.width / 2, canvas.height / 2), this.Input.Keyboard);
+		this.character = new Character(new eg.Vector2d(canvas.width / 2, canvas.height / 2), this.Input.Keyboard, this.Input);
 		this.character.characterGraphic.ZIndex = 100;
 
 		this.rock1 = new Rock(new eg.Vector2d(canvas.width / 2 + 200, canvas.height / 2 + 200));

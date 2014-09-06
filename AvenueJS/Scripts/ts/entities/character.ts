@@ -7,7 +7,7 @@
 	public characterMovementController: eg.MovementControllers.LinearMovementController;
 	public characterInputController: eg.InputControllers.DirectionalInputController;
 
-	constructor(startPosition: eg.Vector2d, keyboard: eg.Input.KeyboardHandler) {
+	constructor(startPosition: eg.Vector2d, keyboard: eg.Input.KeyboardHandler, input: eg.Input.InputManager) {
 		super(new eg.Bounds.BoundingCircle(startPosition, Character.characterRadius));
 
 		this.characterGraphic = new eg.Graphics.Circle(startPosition.X, startPosition.Y, Character.characterRadius, EndGate.Graphics.Color.Red);
@@ -17,6 +17,12 @@
 
 		this.characterInputController = new eg.InputControllers.DirectionalInputController(keyboard, (direction: string, startMoving: boolean) => {
 			this.characterMovementController.Move(direction, startMoving);
+		});
+
+		input.Mouse.OnClick.Bind((event: eg.Input.IMouseClickEvent) => {
+			event.Position
+
+
 		});
 
 	}
