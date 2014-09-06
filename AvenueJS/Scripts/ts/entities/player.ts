@@ -87,8 +87,8 @@
 		}
 	}
 
-	public mousedown(e) {
+	public mousedown(e:MouseEvent) {
 		this.weapon.fire(this.x/2, this.y/2, this.rotation);
-		console.log("MOUSE DOWN");
+		console.log("MOUSE DOWN" + e.x + " " + e.y);
 	}
 } 

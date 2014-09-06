@@ -2,8 +2,12 @@
 	public static mapData: any;
 	public tileset: any;
 	public container: createjs.Container;
+	public arrayOfTiles: Array<createjs.Sprite>;
+	public stage: createjs.Stage;
 
-	constructor(con: createjs.Container) {
+	constructor(con: createjs.Container, stage: createjs.Stage) {
+		this.stage = stage;
+		this.arrayOfTiles = new Array();
 		this.container = con;
 		this.tileset = new Image();
 		// getting imagefile from first tileset
@@ -41,7 +45,7 @@
 		for (var y = 0; y < layerData.height; y++) {
 			for (var x = 0; x < layerData.width; x++) {
 				// create a new Bitmap for each cell
-				var cellBitmap = new createjs.BitmapAnimation(tilesetSheet);
+				var cellBitmap = new createjs.Sprite(tilesetSheet);
 				// layer data has single dimension array
 				var idx = x + y * layerData.width;
 				// tilemap data uses 1 as first value, EaselJS uses 0 (sub 1 to load correct tile)
@@ -55,9 +59,30 @@
 				cellBitmap.y = y * tileheight * 2;
 				// add bitmap to stage
 				this.container.addChild(cellBitmap);
+				this.arrayOfTiles.push(cellBitmap);
 			}
 		}
 	}
+
+	public _tick(event) {
+		var hidden = 0;
+		
+		for(var x = 0; x < this.arrayOfTiles.length; x++){
+			if (this.arrayOfTiles[x].x >= -1 * this.container.x - 128 &&
+				this.arrayOfTiles[x].y >= -1 * this.container.y - 128 &&
+				this.arrayOfTiles[x].x <= -1 * this.container.x + this.stage.canvas.width + 64 &&
+				this.arrayOfTiles[x].y <= -1 * this.container.y + this.stage.canvas.height + 64) {
+				this.arrayOfTiles[x].visible = true;
+			}
+			else {
+				this.arrayOfTiles[x].visible = false;
+				hidden++;
+			}
+			
+		}
+		//console.log("size of array: " + this.arrayOfTiles.length + " hidden: " + hidden);
+	}
+
 }
 
 

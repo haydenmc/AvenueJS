@@ -41,7 +41,7 @@ class World {
 	}
 
 	private initMap() {
-		this.map = new TileMap(this.container);
+		this.map = new TileMap(this.container, this.stage);
 	}
 	private initPlayer() {
 		this.playerCharacter = new Player(this);
@@ -65,7 +65,7 @@ class World {
 
 		//this.container.x = -this.controllerEntity.x - this.controllerEntity.controllerXOffset + this.stage.canvas.width / 2;
 		//this.container.y = -this.controllerEntity.y - this.controllerEntity.controllerYOffest + this.stage.canvas.height / 2;
-
+		this.map._tick(event);
 		this.stage.update();
 	}
 
