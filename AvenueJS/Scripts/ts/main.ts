@@ -1,8 +1,8 @@
 ﻿class Main {
 	static instance: Main;
 	private canvas: HTMLCanvasElement;
-
 	private world: World;
+	public hub: Hub;
 
 	constructor() {
 		Main.instance = this;
@@ -14,7 +14,9 @@
 		// Initialize the canvas size.
 		this.resizeCanvas();
 		this.world = new World(this.canvas);
-
+		// Instantiate the SignalR Hub.
+		this.hub = new Hub();
+		this.hub.connect();
 	}
 
 	public resizeCanvas() {

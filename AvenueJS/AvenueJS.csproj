@@ -136,8 +136,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Hubs\GameHub.cs" />
+    <Compile Include="Server\Client.cs" />
+    <Compile Include="Server\Entities\GameEntity.cs" />
+    <Compile Include="Server\Game.cs" />
+    <Compile Include="Server\GameHub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\Utilities\HighFrequencyTimer.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +190,7 @@
     <TypeScriptCompile Include="Scripts\ts\entities\rock.ts" />
     <TypeScriptCompile Include="Scripts\ts\entities\terrain.ts" />
     <TypeScriptCompile Include="Scripts\ts\gameentity.ts" />
+    <TypeScriptCompile Include="Scripts\ts\hub.ts" />
     <TypeScriptCompile Include="Scripts\ts\main.ts" />
     <TypeScriptCompile Include="Scripts\ts\entities\projectile.ts" />
     <TypeScriptCompile Include="Scripts\ts\entities\weapon.ts" />
@@ -193,7 +198,9 @@
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs\createjs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\preloadjs\preloadjs.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\signalr\signalr.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\soundjs\soundjs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\tweenjs\tweenjs.d.ts" />
   </ItemGroup>
