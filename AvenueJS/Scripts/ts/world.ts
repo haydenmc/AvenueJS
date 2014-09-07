@@ -4,9 +4,10 @@ class World {
 	private worldObjects: Array<GameEntity>;
 	private stage: createjs.Stage;
 	private container: createjs.Container;
-	private playerCharacter: Character;
+	private playerCharacter: Player;
 	private controllerEntity: GameEntity;
 	private map: TileMap;
+	public players: Array<Player>;
 
 	constructor(canvas) {
 
@@ -44,9 +45,12 @@ class World {
 		this.map = new TileMap(this.container, this.stage);
 	}
 	private initPlayer() {
+		this.players = new Array<Player>();
 		this.playerCharacter = new Player(this);
+		this.playerCharacter.controllable = true;
 		this.controllerEntity = this.playerCharacter;
 		this.addChild(this.playerCharacter);
+		this.players.push(this.playerCharacter);
 	}
 
 	private initTerrain() {

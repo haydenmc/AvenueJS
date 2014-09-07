@@ -1,7 +1,7 @@
 ﻿class Main {
 	static instance: Main;
 	private canvas: HTMLCanvasElement;
-	private world: World;
+	public world: World;
 	public hub: Hub;
 
 	constructor() {

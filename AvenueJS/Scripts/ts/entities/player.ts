@@ -1,5 +1,8 @@
 ﻿class Player extends Character {
+	public controllable: boolean = false;
 	public speed: number = 10;
+
+	public connectionId: string;
 
 	private wKey: number = 87;
 	private aKey: number = 65;
@@ -7,10 +10,10 @@
 	private dKey: number = 68;
 	private spaceKey: number = 32;
 
-	private wKeyDown: boolean = false;
-	private aKeyDown: boolean = false;
-	private sKeyDown: boolean = false;
-	private dKeyDown: boolean = false;
+	public wKeyDown: boolean = false;
+	public aKeyDown: boolean = false;
+	public sKeyDown: boolean = false;
+	public dKeyDown: boolean = false;
 
 	public weapon: Weapon;
 
@@ -22,6 +25,7 @@
 		this.world.addChild(this.weapon);
 		this.regX = 0;
 		this.regY = 0;
+		this.connectionId = "";
 	}
 
 	public _tick(event) {
@@ -30,7 +34,7 @@
 		this.controllerXOffset = 0;
 		this.controllerYOffest = 0;
 
-		var movement:number;
+		var movement: number;
 
 		this.x += movement = (this.dKeyDown) ? this.speed : 0;
 		this.x -= movement = (this.aKeyDown) ? this.speed : 0;
@@ -39,17 +43,20 @@
 
 		//this.rotation = Math.atan((this.getStage().mouseX - this.x) / (this.getStage().mouseY - this.y)) * 180 / Math.PI;
 		//assuming center of screen
+		if (!this.controllable) return;
 		var degrees = -1 * Math.atan((this.getStage().mouseX - this.getStage().canvas.width / 2) / (this.getStage().mouseY - this.getStage().canvas.height / 2)) * 180 / Math.PI;
-		this.rotation = degrees = ((this.getStage().mouseY - this.getStage().canvas.height / 2) < 0) ? degrees  : degrees + 180;
+		this.rotation = degrees = ((this.getStage().mouseY - this.getStage().canvas.height / 2) < 0) ? degrees : degrees + 180;
 		//console.log("Rotation: " +  this.rotation);
-		
+
 		//TODO: fix for changing controlling objects
 		this.centerOnEntity();
-
+		if (Main.instance.hub.ready) {
+			Main.instance.hub.updatePlayer({ wKeyDown: this.wKeyDown, aKeyDown: this.aKeyDown, sKeyDown: this.sKeyDown, dKeyDown: this.dKeyDown, x: this.x, y: this.y });
+		}
 	}
 
 	public keydown(e) {
-
+		if (!this.controllable) return;
 		switch (e.keyCode)
 		{
 			case this.wKey:
@@ -71,6 +78,7 @@
 	}
 
 	public keyup(e) {
+		if (!this.controllable) return;
 		switch (e.keyCode) {
 			case this.wKey:
 				this.wKeyDown = false;
@@ -87,7 +95,8 @@
 		}
 	}
 
-	public mousedown(e:MouseEvent) {
+	public mousedown(e: MouseEvent) {
+		if (!this.controllable) return;
 		this.weapon.fire(this.x/2, this.y/2, this.rotation);
 		console.log("MOUSE DOWN" + e.x + " " + e.y);
 	}

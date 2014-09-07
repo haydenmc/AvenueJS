@@ -13,7 +13,7 @@ namespace AvenueJS.Server
 		public const int STAGE_HEIGHT = 10000;
 
 		public Dictionary<string,Client> Clients { get; private set; }
-		public List<GameEntity> Entities { get; private set; }
+		//public List<GameEntity> Entities { get; private set; }
 		private readonly static Lazy<Game> _instance = new Lazy<Game>(() => new Game());
 		private readonly TimeSpan BroadcastInterval = TimeSpan.FromMilliseconds(40);
 		private HighFrequencyTimer _gameLoop;
@@ -21,7 +21,7 @@ namespace AvenueJS.Server
 		Game()
 		{
 			Clients = new Dictionary<string,Client>();
-			Entities = new List<GameEntity>();
+			//Entities = new List<GameEntity>();
 			_gameLoop = new HighFrequencyTimer(1000 / 60, id => Update(id));
 		}
 		

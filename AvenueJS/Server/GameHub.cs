@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.SignalR;
 using System.Threading.Tasks;
+using AvenueJS.Server.Entities;
 
 namespace AvenueJS.Server
 {
@@ -35,6 +36,12 @@ namespace AvenueJS.Server
 			this._game.Clients.Remove(Context.ConnectionId);
 			Clients.All.notify("'" + client.Name + "' has disconnected");
 			return base.OnDisconnected(stopCalled);
+		}
+
+		public void UpdatePlayer(dynamic p)
+		{
+			p.connectionId = Context.ConnectionId;
+			Clients.AllExcept(Context.ConnectionId).UpdatePlayerFromServer(p);
 		}
 	}
 }
