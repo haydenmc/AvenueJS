@@ -36,6 +36,16 @@
 
 		var movement: number;
 
+		//var mapy = Math.floor(this.y / TileMap.mapData.tilewidth / 2);
+		//var mapx = Math.floor(this.x / TileMap.mapData.tileheight / 2);
+		//var tileData = mapy * 100 + mapx;
+		//console.log("Tile location: " + mapx + " " + mapy + " " + TileMap.mapData.layers[0].data[tileData]);
+
+		//this.x += movement = (this.dKeyDown && TileMap.mapData.layers[0].data[(mapy) * 100 + mapx + 1] != 114) ? this.speed : 0;
+		//this.x -= movement = (this.aKeyDown && TileMap.mapData.layers[0].data[(mapy) * 100 + mapx - 1] != 114) ? this.speed : 0;
+		//this.y -= movement = (this.wKeyDown && TileMap.mapData.layers[0].data[(mapy - 1) * 100 + mapx] != 114) ? this.speed : 0;
+		//this.y += movement = (this.sKeyDown && TileMap.mapData.layers[0].data[(mapy + 1) * 100 + mapx] != 114) ? this.speed : 0;
+
 		this.x += movement = (this.dKeyDown) ? this.speed : 0;
 		this.x -= movement = (this.aKeyDown) ? this.speed : 0;
 		this.y -= movement = (this.wKeyDown) ? this.speed : 0;
@@ -46,6 +56,8 @@
 		if (!this.controllable) return;
 		var degrees = -1 * Math.atan((this.getStage().mouseX - this.getStage().canvas.width / 2) / (this.getStage().mouseY - this.getStage().canvas.height / 2)) * 180 / Math.PI;
 		this.rotation = degrees = ((this.getStage().mouseY - this.getStage().canvas.height / 2) < 0) ? degrees : degrees + 180;
+
+		
 		//console.log("Rotation: " +  this.rotation);
 
 		//TODO: fix for changing controlling objects
@@ -57,9 +69,18 @@
 
 	public keydown(e) {
 		if (!this.controllable) return;
+		
+
 		switch (e.keyCode)
 		{
 			case this.wKey:
+
+				//TileMap.mapData.layers[0].data[x];
+
+				//coordinate convertor
+				//cellBitmap.x = x * tilewidth * 2;
+				//cellBitmap.y = y * tileheight * 2;
+				
 				this.wKeyDown = true;
 				break;
 			case this.aKey:
@@ -71,9 +92,10 @@
 			case this.dKey:
 				this.dKeyDown = true;
 				break;
-			case this.spaceKey:
-				break;
+
 		}
+
+		
 		//console.log("Key: " + e.keyCode);
 	}
 
@@ -97,7 +119,12 @@
 
 	public mousedown(e: MouseEvent) {
 		if (!this.controllable) return;
-		this.weapon.fire(this.x/2, this.y/2, this.rotation);
-		console.log("MOUSE DOWN" + e.x + " " + e.y);
+		this.weapon.fire(this.x / 2, this.y / 2, this.rotation);
+
+		if (Main.instance.hub.ready) {
+			Main.instance.hub.fireBullet(this.x / 2, this.y / 2, this.rotation);
+			console.log("sending fire to server");
+		}
+		//console.log("MOUSE DOWN" + e.x + " " + e.y);
 	}
 } 

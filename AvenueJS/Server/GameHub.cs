@@ -43,5 +43,11 @@ namespace AvenueJS.Server
 			p.connectionId = Context.ConnectionId;
 			Clients.AllExcept(Context.ConnectionId).UpdatePlayerFromServer(p);
 		}
+
+		public void FireBullet(double x, double y, double r)
+		{
+			var connectionId = Context.ConnectionId;
+			Clients.AllExcept(Context.ConnectionId).FireBulletFromServer(x,y,r,connectionId);
+		}
 	}
 }

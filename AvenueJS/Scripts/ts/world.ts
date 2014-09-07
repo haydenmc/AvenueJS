@@ -51,6 +51,8 @@ class World {
 		this.controllerEntity = this.playerCharacter;
 		this.addChild(this.playerCharacter);
 		this.players.push(this.playerCharacter);
+		this.playerCharacter.x = 2000;
+		this.playerCharacter.y = 2000;
 	}
 
 	private initTerrain() {
