@@ -8,6 +8,7 @@ class World {
 	private controllerEntity: GameEntity;
 	private map: TileMap;
 	public players: Array<Player>;
+	public arrayOfTiles: Array<createjs.Sprite>;
 
 	constructor(canvas) {
 
@@ -37,16 +38,16 @@ class World {
 	public initWorld() {
 		//order determins draw order
 		this.initMap();
-		this.initTerrain();
+		//this.initTerrain();
 		this.initPlayer();
 	}
 
 	private initMap() {
-		this.map = new TileMap(this.container, this.stage);
+		this.map = new TileMap(this.container, this.stage, this.arrayOfTiles);
 	}
 	private initPlayer() {
 		this.players = new Array<Player>();
-		this.playerCharacter = new Player(this);
+		this.playerCharacter = new Player(this, this.arrayOfTiles);
 		this.playerCharacter.controllable = true;
 		this.controllerEntity = this.playerCharacter;
 		this.addChild(this.playerCharacter);

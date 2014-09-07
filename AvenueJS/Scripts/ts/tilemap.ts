@@ -2,13 +2,13 @@
 	public static mapData: any;
 	public tileset: any;
 	public container: createjs.Container;
-	public static arrayOfTiles: Array<createjs.Sprite>;
+	public arrayOfTiles: Array<createjs.Sprite>;
 	public stage: createjs.Stage;
 
-	constructor(con: createjs.Container, stage: createjs.Stage) {
+	constructor(con: createjs.Container, stage: createjs.Stage, array: Array<createjs.Sprite>) {
 		this.stage = stage;
-		TileMap.arrayOfTiles = new Array();
-		//array = this.arrayOfTiles;
+		this.arrayOfTiles = new Array();
+		array = this.arrayOfTiles;
 		this.container = con;
 		this.tileset = new Image();
 		// getting imagefile from first tileset
@@ -62,7 +62,7 @@
 				cellBitmap.y = y * tileheight * 2;
 				// add bitmap to stage
 				this.container.addChild(cellBitmap);
-				TileMap.arrayOfTiles.push(cellBitmap);
+				this.arrayOfTiles.push(cellBitmap);
 			}
 		}
 	}
@@ -70,15 +70,15 @@
 	public _tick(event) {
 		var hidden = 0;
 		
-		for (var x = 0; x < TileMap.arrayOfTiles.length; x++){
-			if (TileMap.arrayOfTiles[x].x >= -1 * this.container.x - 128 &&
-				TileMap.arrayOfTiles[x].y >= -1 * this.container.y - 128 &&
-				TileMap.arrayOfTiles[x].x <= -1 * this.container.x + this.stage.canvas.width + 64 &&
-				TileMap.arrayOfTiles[x].y <= -1 * this.container.y + this.stage.canvas.height + 64) {
-				TileMap.arrayOfTiles[x].visible = true;
+		for (var x = 0; x < this.arrayOfTiles.length; x++){
+			if (this.arrayOfTiles[x].x >= -1 * this.container.x - 128 &&
+				this.arrayOfTiles[x].y >= -1 * this.container.y - 128 &&
+				this.arrayOfTiles[x].x <= -1 * this.container.x + this.stage.canvas.width + 64 &&
+				this.arrayOfTiles[x].y <= -1 * this.container.y + this.stage.canvas.height + 64) {
+				this.arrayOfTiles[x].visible = true;
 			}
 			else {
-				TileMap.arrayOfTiles[x].visible = false;
+				this.arrayOfTiles[x].visible = false;
 				hidden++;
 			}
 			

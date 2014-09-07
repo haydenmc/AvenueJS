@@ -15,10 +15,13 @@
 	public sKeyDown: boolean = false;
 	public dKeyDown: boolean = false;
 
+	public arrayOfTiles: Array<createjs.Sprite>;
+
 	public weapon: Weapon;
 
-	constructor(world) {
+	constructor(world, array: Array<createjs.Sprite>) {
 		super(world);
+		this.arrayOfTiles = array;
 		this.graphics.beginFill("#f00").drawCircle(0, 0, 20);
 		this.graphics.beginFill("#f00").drawRect(-2, 2, 4, -30);
 		this.weapon = new BlasterWeapon(0, 0, world);
@@ -36,20 +39,20 @@
 
 		var movement: number;
 
-		//var mapy = Math.floor(this.y / TileMap.mapData.tilewidth / 2);
-		//var mapx = Math.floor(this.x / TileMap.mapData.tileheight / 2);
-		//var tileData = mapy * 100 + mapx;
-		//console.log("Tile location: " + mapx + " " + mapy + " " + TileMap.mapData.layers[0].data[tileData]);
+		var mapy = Math.floor(this.y / TileMap.mapData.tilewidth / 2);
+		var mapx = Math.floor(this.x / TileMap.mapData.tileheight / 2);
+		var tileData = mapy * 100 + mapx;
+		console.log("Tile location: " + mapx + " " + mapy + " " + TileMap.mapData.layers[0].data[tileData]);
 
-		//this.x += movement = (this.dKeyDown && TileMap.mapData.layers[0].data[(mapy) * 100 + mapx + 1] != 114) ? this.speed : 0;
-		//this.x -= movement = (this.aKeyDown && TileMap.mapData.layers[0].data[(mapy) * 100 + mapx - 1] != 114) ? this.speed : 0;
-		//this.y -= movement = (this.wKeyDown && TileMap.mapData.layers[0].data[(mapy - 1) * 100 + mapx] != 114) ? this.speed : 0;
-		//this.y += movement = (this.sKeyDown && TileMap.mapData.layers[0].data[(mapy + 1) * 100 + mapx] != 114) ? this.speed : 0;
+		this.x += movement = (this.dKeyDown && TileMap.mapData.layers[0].data[(mapy) * 100 + mapx + 1] != 114 && TileMap.mapData.layers[0].data[(mapy) * 100 + mapx + 1] != 123) ? this.speed : 0;
+		this.x -= movement = (this.aKeyDown && TileMap.mapData.layers[0].data[(mapy) * 100 + mapx - 1] != 114 && TileMap.mapData.layers[0].data[(mapy) * 100 + mapx - 1] != 123) ? this.speed : 0;
+		this.y -= movement = (this.wKeyDown && TileMap.mapData.layers[0].data[(mapy - 1) * 100 + mapx] != 114 && TileMap.mapData.layers[0].data[(mapy - 1) * 100 + mapx] != 123) ? this.speed : 0;
+		this.y += movement = (this.sKeyDown && TileMap.mapData.layers[0].data[(mapy + 1) * 100 + mapx] != 114 && TileMap.mapData.layers[0].data[(mapy + 1) * 100 + mapx] != 123) ? this.speed : 0;
 
-		this.x += movement = (this.dKeyDown) ? this.speed : 0;
-		this.x -= movement = (this.aKeyDown) ? this.speed : 0;
-		this.y -= movement = (this.wKeyDown) ? this.speed : 0;
-		this.y += movement = (this.sKeyDown) ? this.speed : 0;
+		//this.x += movement = (this.dKeyDown) ? this.speed : 0;
+		//this.x -= movement = (this.aKeyDown) ? this.speed : 0;
+		//this.y -= movement = (this.wKeyDown) ? this.speed : 0;
+		//this.y += movement = (this.sKeyDown) ? this.speed : 0;
 
 		//this.rotation = Math.atan((this.getStage().mouseX - this.x) / (this.getStage().mouseY - this.y)) * 180 / Math.PI;
 		//assuming center of screen

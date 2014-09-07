@@ -37,7 +37,7 @@ class Hub {
 			}
 		}
 		if (player == null) {
-			player = new Player(Main.instance.world);
+			player = new Player(Main.instance.world, Main.instance.world.arrayOfTiles);
 			alert("OH HEY LOOK A NEW PLAYER WITH ID " + p.connectionId);
 			player.connectionId = p.connectionId;
 			Main.instance.world.players.push(player);
