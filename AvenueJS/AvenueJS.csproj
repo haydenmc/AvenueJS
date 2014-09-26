@@ -146,6 +146,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\prototype-player.png" />
     <Content Include="Content\images\vs.png" />
     <Content Include="Content\site.css">
       <DependentUpon>site.less</DependentUpon>
@@ -190,7 +191,7 @@
     <TypeScriptCompile Include="Scripts\ts\debug.ts" />
     <TypeScriptCompile Include="Scripts\ts\hub.ts" />
     <TypeScriptCompile Include="Scripts\ts\main.ts" />
-    <TypeScriptCompile Include="Scripts\ts\world.ts" />
+    <TypeScriptCompile Include="Scripts\ts\tinygunsgame.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs\createjs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />
