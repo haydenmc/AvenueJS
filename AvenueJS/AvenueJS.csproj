@@ -188,10 +188,15 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\ts\Entity\bullet.ts" />
+    <TypeScriptCompile Include="Scripts\ts\Entity\character.ts" />
     <TypeScriptCompile Include="Scripts\ts\debug.ts" />
+    <TypeScriptCompile Include="Scripts\ts\Entity\entity.ts" />
+    <TypeScriptCompile Include="Scripts\ts\Entity\player.ts" />
     <TypeScriptCompile Include="Scripts\ts\hub.ts" />
     <TypeScriptCompile Include="Scripts\ts\main.ts" />
     <TypeScriptCompile Include="Scripts\ts\tinygunsgame.ts" />
+    <TypeScriptCompile Include="Scripts\ts\Entity\weapon.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs\createjs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />
