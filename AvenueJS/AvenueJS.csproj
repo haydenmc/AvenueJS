@@ -146,7 +146,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\bullet_pistol.png" />
     <Content Include="Content\images\character_base.png" />
+    <Content Include="Content\images\character_core.png" />
     <Content Include="Content\images\prototype-player.png" />
     <Content Include="Content\images\vs.png" />
     <Content Include="Content\images\weapon_pistol.png" />
@@ -160,7 +162,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\tiles\tile.json" />
-    <Content Include="Content\physics\character_base.json" />
+    <Content Include="Content\physics\physics.json" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
@@ -192,10 +194,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\ts\Entity\bullet.ts" />
+    <TypeScriptCompile Include="Scripts\ts\Entity\bullet_pistol.ts" />
     <TypeScriptCompile Include="Scripts\ts\Entity\character.ts" />
     <TypeScriptCompile Include="Scripts\ts\debug.ts" />
     <TypeScriptCompile Include="Scripts\ts\Entity\entity.ts" />
-    <TypeScriptCompile Include="Scripts\ts\Entity\pistol.ts" />
+    <TypeScriptCompile Include="Scripts\ts\Entity\weapon_pistol.ts" />
     <TypeScriptCompile Include="Scripts\ts\Entity\player.ts" />
     <TypeScriptCompile Include="Scripts\ts\hub.ts" />
     <TypeScriptCompile Include="Scripts\ts\main.ts" />

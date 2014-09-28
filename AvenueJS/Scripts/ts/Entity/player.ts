@@ -10,7 +10,7 @@
 	{
 		//Updates the rotation of the player to face the pointer
 		//this.sprite.rotation = this.game.physics.arcade.angleToPointer(this.sprite);
-		var deltaR = this.sprite.rotation - this.game.physics.arcade.angleToPointer(this.sprite);
+		var deltaR = this.core.rotation - this.game.physics.arcade.angleToPointer(this.core);
 		deltaR %= Math.PI * 2;
 
 		if (deltaR > Math.PI)
@@ -23,46 +23,54 @@
 
 		}
 
-		this.sprite.body.rotateLeft(500 * deltaR);
-		console.log(deltaR);
+		this.core.body.rotateLeft(500 * deltaR);
+		//console.log(deltaR);
 
 		//Speed logic
 		//Remember that going in an diagonal SHOULD have the same speed as a vertical or horizontal movement
-		this.sprite.body.velocity.x = 0;
-		this.sprite.body.velocity.y = 0;
+		this.core.body.velocity.x = 0;
+		this.core.body.velocity.y = 0;
 
 		//Controls player horizontal velocity
 		if (this.game.input.keyboard.isDown(Phaser.Keyboard.A))
 		{
-			this.sprite.body.velocity.x = -this.speed;
+			this.core.body.velocity.x = -this.speed;
 		}
 		else if (this.game.input.keyboard.isDown(Phaser.Keyboard.D))
 		{
-			this.sprite.body.velocity.x = this.speed;
+			this.core.body.velocity.x = this.speed;
 		}
 		else
 		{
-			this.sprite.body.velocity.x = 0;
+			this.core.body.velocity.x = 0;
 		}
 
 		//Controls player vertical veloctiy
 		if (this.game.input.keyboard.isDown(Phaser.Keyboard.W))
 		{
-			this.sprite.body.velocity.y = -this.speed;
+			this.core.body.velocity.y = -this.speed;
 		}
 		else if (this.game.input.keyboard.isDown(Phaser.Keyboard.S))
 		{
-			this.sprite.body.velocity.y = this.speed;
+			this.core.body.velocity.y = this.speed;
 		}
 		else
 		{
-			this.sprite.body.velocity.y = 0;
+			this.core.body.velocity.y = 0;
 		}
 
-		if (this.sprite.body.velocity.x != 0 && this.sprite.body.velocity.y != 0)
+		if (this.core.body.velocity.x != 0 && this.core.body.velocity.y != 0)
 		{
-			this.sprite.body.velocity.x = this.sprite.body.velocity.x / this.speed * Math.cos(Math.PI/4) * this.speed;
-			this.sprite.body.velocity.y = this.sprite.body.velocity.y / this.speed * Math.sin(Math.PI/4) * this.speed;
+			this.core.body.velocity.x = this.core.body.velocity.x / this.speed * Math.cos(Math.PI/4) * this.speed;
+			this.core.body.velocity.y = this.core.body.velocity.y / this.speed * Math.sin(Math.PI/4) * this.speed;
+		}
+
+		//firing logic
+		if (this.game.input.activePointer.isDown)
+		{
+			var deltaAngle = this.game.physics.arcade.angleToPointer(this.core);
+			this.currentWeapon.fire(deltaAngle);
+			console.log(deltaAngle);
 		}
 	}
 }

@@ -10,7 +10,7 @@
 		this.image = image;
 
 
-		if (this.image != "null")
+		if (this.image != "null" && this.image != null)
 		{
 			this.sprite = this.game.add.sprite(x, y, this.image);
 
