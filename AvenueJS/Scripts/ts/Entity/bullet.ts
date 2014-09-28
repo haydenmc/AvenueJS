@@ -1,4 +1,4 @@
-﻿class Bullet
+﻿class Bullet extends Entity
 {
 
 } 

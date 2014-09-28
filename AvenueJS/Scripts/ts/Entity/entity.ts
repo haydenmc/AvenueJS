@@ -8,9 +8,14 @@
 	{
 		this.game = game;
 		this.image = image;
-		this.sprite = this.game.add.sprite(x, y, this.image);
-	}
 
+
+		if (this.image != "null")
+		{
+			this.sprite = this.game.add.sprite(x, y, this.image);
+
+		}
+	}
 	public update()
 	{
 

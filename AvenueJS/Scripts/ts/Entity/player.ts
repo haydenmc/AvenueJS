@@ -9,7 +9,22 @@
 	public update()
 	{
 		//Updates the rotation of the player to face the pointer
-		this.sprite.rotation = this.game.physics.arcade.angleToPointer(this.sprite);
+		//this.sprite.rotation = this.game.physics.arcade.angleToPointer(this.sprite);
+		var deltaR = this.sprite.rotation - this.game.physics.arcade.angleToPointer(this.sprite);
+		deltaR %= Math.PI * 2;
+
+		if (deltaR > Math.PI)
+		{
+			deltaR -= Math.PI * 2;
+		}
+		else if (deltaR < -Math.PI)
+		{
+			deltaR += Math.PI * 2;
+
+		}
+
+		this.sprite.body.rotateLeft(500 * deltaR);
+		console.log(deltaR);
 
 		//Speed logic
 		//Remember that going in an diagonal SHOULD have the same speed as a vertical or horizontal movement
