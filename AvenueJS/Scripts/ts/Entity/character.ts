@@ -23,10 +23,6 @@
 
 		this.sprite.addChild(this.pistol.sprite);
 
-		this.sprite.anchor.setTo(2 / 5, 0.5);
-		this.pistol.sprite.anchor.setTo(2/5, 0.5);
-
-
 		this.currentWeapon = this.pistol;
 	}
 }

@@ -147,7 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\character_base.png" />
-    <Content Include="Content\images\character_core.png" />
     <Content Include="Content\images\prototype-player.png" />
     <Content Include="Content\images\vs.png" />
     <Content Include="Content\images\weapon_pistol.png" />
