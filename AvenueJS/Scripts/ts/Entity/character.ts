@@ -43,13 +43,13 @@
 		if (this.core.body.velocity.x != 0 || this.core.body.velocity.y != 0)
 		{
 			this.sprite.animations.play("walk");
-			console.log("has velocity");
+			//console.log("has velocity");
 		}
 		else
 		{
 			this.sprite.animations.stop();
 			this.sprite.frame = 1;
-			console.log("no velocity");
+			//console.log("no velocity");
 		}
 	}
 }
