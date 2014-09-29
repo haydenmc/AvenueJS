@@ -202,6 +202,8 @@
     <TypeScriptCompile Include="Scripts\ts\Entity\player.ts" />
     <TypeScriptCompile Include="Scripts\ts\hub.ts" />
     <TypeScriptCompile Include="Scripts\ts\main.ts" />
+    <TypeScriptCompile Include="Scripts\ts\gamemap.ts" />
+    <TypeScriptCompile Include="Scripts\ts\map_manager.ts" />
     <TypeScriptCompile Include="Scripts\ts\tinygunsgame.ts" />
     <TypeScriptCompile Include="Scripts\ts\Entity\weapon.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
