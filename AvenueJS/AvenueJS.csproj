@@ -158,7 +158,7 @@
     <Content Include="Content\site.min.css">
       <DependentUpon>site.css</DependentUpon>
     </Content>
-    <Content Include="Content\tiles\dg_edging132.gif" />
+    <Content Include="Content\images\dg_edging132.gif" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\tiles\tile.json" />
