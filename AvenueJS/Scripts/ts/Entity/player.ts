@@ -72,5 +72,8 @@
 			this.currentWeapon.fire(deltaAngle);
 			console.log(deltaAngle);
 		}
+
+		//call super for animations
+		super.update();
 	}
 }
