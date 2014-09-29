@@ -8,17 +8,18 @@
 
 	public constructor(game: Phaser.Game)
 	{
+		//TODO FIX LOGIC FOR HANDLING MORE MMAPS
 		this.game = game;
 
 		//Beging adding maps
 		//adding island
 		this.maps[MapManager.ISLAND_MAP] = new Gamemap(TinyGunsGame.MAP_PLACEHOLDER, TinyGunsGame.TILES_PLACEHOLDER, 32, this.game);
-		
-		console.log("map manager created");
+		this.maps[MapManager.ISLAND_MAP].collideTiles.push(114);
+		console.log("number: " + this.maps[MapManager.ISLAND_MAP].collideTiles[0]);
+		this.maps[MapManager.ISLAND_MAP].setCollisions();
 
 		//set default map
 		this.currentMap = this.maps[MapManager.ISLAND_MAP];
-		console.log(this.maps[MapManager.ISLAND_MAP]);
 	}
 
 	public switchToMap(mapName: string)
