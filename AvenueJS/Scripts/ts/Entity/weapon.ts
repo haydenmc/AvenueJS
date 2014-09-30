@@ -20,7 +20,7 @@
 		this.bulletPool = this.game.add.group();
 	}
 
-	public fire(angle: number)
+	public fire(angle: number, parentXVelocity:number, parentYVelocity: number)
 	{
 
 	}

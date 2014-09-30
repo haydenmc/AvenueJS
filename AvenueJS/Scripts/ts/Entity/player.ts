@@ -69,7 +69,7 @@
 		if (this.game.input.activePointer.isDown)
 		{
 			var deltaAngle = this.game.physics.arcade.angleToPointer(this.core);
-			this.currentWeapon.fire(deltaAngle);
+			this.currentWeapon.fire(deltaAngle, this.core.body.velocity.x, this.core.body.velocity.y);
 			console.log(deltaAngle);
 		}
 
