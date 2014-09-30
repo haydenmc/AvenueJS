@@ -4,7 +4,7 @@
 	{
 		super(x, y, TinyGunsGame.BULLET_PISTOL_BASE, game);
 
-		game.physics.p2.enable(this.sprite, true, false);
+		game.physics.p2.enable(this.sprite, false, false);
 		this.sprite.body.clearShapes();
 		this.sprite.body.loadPolygon(TinyGunsGame.PHYSICS_FILE, TinyGunsGame.BULLET_PISTOL_PHYSICS);
 		this.sprite.checkWorldBounds = true;
