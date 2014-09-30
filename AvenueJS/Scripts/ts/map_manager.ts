@@ -17,6 +17,7 @@
 		this.maps[MapManager.ISLAND_MAP].collideTiles.push(114);
 		console.log("number: " + this.maps[MapManager.ISLAND_MAP].collideTiles[0]);
 		this.maps[MapManager.ISLAND_MAP].setCollisions();
+		this.maps[MapManager.ISLAND_MAP].mapLayer.debug = true;
 
 		//set default map
 		this.currentMap = this.maps[MapManager.ISLAND_MAP];

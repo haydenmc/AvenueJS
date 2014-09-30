@@ -4,14 +4,20 @@
 	{
 		super(x, y, TinyGunsGame.BULLET_PISTOL_BASE, game);
 
-		game.physics.p2.enable(this.sprite);
+		game.physics.p2.enable(this.sprite, true, false);
 		this.sprite.body.clearShapes();
 		this.sprite.body.loadPolygon(TinyGunsGame.PHYSICS_FILE, TinyGunsGame.BULLET_PISTOL_PHYSICS);
-		//this.sprite.body.collideWordsBounds = false;
 		this.sprite.checkWorldBounds = true;
-		this.sprite.outOfBoundsKill = true;
-		this.sprite.body.collideWorldBounds = false;
+		//this.sprite.outOfBoundsKill = true;
 		this.sprite.anchor.setTo(0.5, 0.5);
+
+		this.sprite.body.onBeginContact.add(this.collide, this);
+
+	}
+
+	public collide(body, shapeA, shapeB, equation)
+	{
+		this.sprite.kill();
 	}
 	
 	public update()
