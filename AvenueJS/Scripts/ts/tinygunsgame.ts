@@ -61,7 +61,9 @@
 
 	public create(): void
 	{
+		//stage changes
 		this.game.stage.backgroundColor = 0x4488cc;
+		this.game.stage.disableVisibilityChange = true;
 
 		//start physics system
 		this.game.physics.startSystem(Phaser.Physics.P2JS);
