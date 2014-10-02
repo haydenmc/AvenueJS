@@ -1,6 +1,5 @@
 ﻿class Player extends Character
 {
-	public speed: number = 500;
 	public constructor(x: number, y: number, game: Phaser.Game)
 	{
 		super(x, y, game);
@@ -34,11 +33,11 @@
 		//Controls player horizontal velocity
 		if (this.game.input.keyboard.isDown(Phaser.Keyboard.A))
 		{
-			this.core.body.velocity.x = -this.speed;
+			this.core.body.velocity.x = -Character.SPEED;
 		}
 		else if (this.game.input.keyboard.isDown(Phaser.Keyboard.D))
 		{
-			this.core.body.velocity.x = this.speed;
+			this.core.body.velocity.x = Character.SPEED;
 		}
 		else
 		{
@@ -48,11 +47,11 @@
 		//Controls player vertical veloctiy
 		if (this.game.input.keyboard.isDown(Phaser.Keyboard.W))
 		{
-			this.core.body.velocity.y = -this.speed;
+			this.core.body.velocity.y = -Character.SPEED;
 		}
 		else if (this.game.input.keyboard.isDown(Phaser.Keyboard.S))
 		{
-			this.core.body.velocity.y = this.speed;
+			this.core.body.velocity.y = Character.SPEED;
 		}
 		else
 		{
@@ -61,8 +60,8 @@
 
 		if (this.core.body.velocity.x != 0 && this.core.body.velocity.y != 0)
 		{
-			this.core.body.velocity.x = this.core.body.velocity.x / this.speed * Math.cos(Math.PI/4) * this.speed;
-			this.core.body.velocity.y = this.core.body.velocity.y / this.speed * Math.sin(Math.PI/4) * this.speed;
+			this.core.body.velocity.x = this.core.body.velocity.x / Character.SPEED * Math.cos(Math.PI / 4) * Character.SPEED;
+			this.core.body.velocity.y = this.core.body.velocity.y / Character.SPEED * Math.sin(Math.PI / 4) * Character.SPEED;
 		}
 
 		//firing logic
@@ -73,7 +72,7 @@
 			console.log(deltaAngle);
 		}
 
-		//call super for animations
+		//call super for animations and weapon and bullets
 		super.update();
 	}
 }

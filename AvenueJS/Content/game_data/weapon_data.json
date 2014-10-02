@@ -1,0 +1,26 @@
+﻿{
+	"weapons": [
+		{
+			"name": "weapon_pistol",
+			"speedModifier": 0,
+			"rotationModifier": 1,
+			"magazineSize": 2,
+			"currentMagSize": 3,
+			"fireSpeed": 4,
+			"reloadSpeed": 5,
+			"fireLocX": 6,
+			"fireLocY": 7
+		},
+		{
+			"name": "weapon_rifle",
+			"speedModifier": 0,
+			"rotationModifier": 1,
+			"magazineSize": 2,
+			"currentMagSize": 3,
+			"fireSpeed": 4,
+			"reloadSpeed": 5,
+			"fireLocX": 6,
+			"fireLocY": 7
+		}
+	]
+}

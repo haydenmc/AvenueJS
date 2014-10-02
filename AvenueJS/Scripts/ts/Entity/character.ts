@@ -1,10 +1,10 @@
 ﻿class Character extends Entity
 {
-	public speed: number;
+	public static SPEED: number = 500;
 	public currentWeapon: Weapon;
 
 	//list of weapons
-	public pistol: Weapon_Pistol;
+	public pistol: Weapon;
 
 	//core
 	public core: Phaser.Sprite;
@@ -21,19 +21,19 @@
 		this.core.body.collideWordsBounds = true;
 
 		//Add body
-		game.physics.p2.enable(this.sprite);
-		this.sprite.body.clearShapes();
-		this.core.addChildAt(this.sprite, 0);
+		game.physics.p2.enable(this);
+		this.body.clearShapes();
+		this.core.addChildAt(this, 0);
 
 		//Add animations
-		this.sprite.animations.add("walk", [0,1,2], 10, true);
+		this.animations.add("walk", [0,1,2], 10, true);
 
 		//Add weapons
 		this.pistol = new Weapon_Pistol(0, 0, game);
-		game.physics.p2.enable(this.pistol.sprite);
-		this.pistol.sprite.body.clearShapes();
+		game.physics.p2.enable(this.pistol);
+		this.pistol.body.clearShapes();
 
-		this.core.addChildAt(this.pistol.sprite,0);
+		this.core.addChildAt(this.pistol,0);
 
 		this.currentWeapon = this.pistol;
 	}
@@ -42,14 +42,16 @@
 	{
 		if (this.core.body.velocity.x != 0 || this.core.body.velocity.y != 0)
 		{
-			this.sprite.animations.play("walk");
+			this.animations.play("walk");
 			//console.log("has velocity");
 		}
 		else
 		{
-			this.sprite.animations.stop();
-			this.sprite.frame = 1;
+			this.animations.stop();
+			this.frame = 1;
 			//console.log("no velocity");
 		}
+
+		this.currentWeapon.update();
 	}
 }

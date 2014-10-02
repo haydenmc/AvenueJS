@@ -6,7 +6,8 @@
 	public reloadSpeed: number = 300; //in ms
 	public fireLocX: number = 32;
 	public fireLocY: number = -16;
-	public bulletSpeed: number = 750;
+
+	//Maybe move to bullet? might need to rethink class inheritance structure
 
 	public constructor(x: number, y: number, game: Phaser.Game)
 	{
@@ -14,14 +15,20 @@
 
 		this.currentMagSize = this.magazineSize;
 
-		for(var x = 0; x < this.magazineSize; x++)
+		for(var x = 0; x < Bullet_Pistol.BULLET_MAX_TRAVEL_DISTANCE / (Bullet_Pistol.BULLET_SPEED - Character.SPEED) + 1; x++)
 		{
 			var bullet = new Bullet_Pistol(0, 0, this.game);
-			this.bulletPool.add(bullet.sprite);
+			this.bulletPool.add(bullet);
 
-			bullet.sprite.kill();
+			bullet.kill();
 		}
 	}
+	public load()
+	{
+		var levels = JSON.parse(this.responseText);
+		console.log(levels);
+	}
+	public responseText: string;
 
 	public fire(angle: number, parentXVelocity: number, parentYVelocity: number )
 	{
@@ -47,11 +54,11 @@
 		}
 
 		bullet.revive();
-		bullet.reset(this.sprite.world.x + 70 * Math.cos(angle) - 20 * Math.sin(angle), this.sprite.world.y + 70 * Math.sin(angle) + 20 * Math.cos(angle));
+		bullet.reset(this.world.x + 70 * Math.cos(angle) - 20 * Math.sin(angle), this.world.y + 70 * Math.sin(angle) + 20 * Math.cos(angle));
 
 		//velocity set
-		bullet.body.velocity.x = this.bulletSpeed * Math.cos(angle) + parentXVelocity;
-		bullet.body.velocity.y = this.bulletSpeed * Math.sin(angle) + parentYVelocity;
+		bullet.body.velocity.x = Bullet_Pistol.BULLET_SPEED * Math.cos(angle) + parentXVelocity;
+		bullet.body.velocity.y = Bullet_Pistol.BULLET_SPEED * Math.sin(angle) + parentYVelocity;
 		console.log(parentXVelocity + " " + parentYVelocity);
 	}
 } 

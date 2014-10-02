@@ -194,6 +194,7 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\game_data\weapon_data.json" />
     <TypeScriptCompile Include="Scripts\ts\Entity\bullet.ts" />
     <TypeScriptCompile Include="Scripts\ts\Entity\bullet_pistol.ts" />
     <TypeScriptCompile Include="Scripts\ts\Entity\character.ts" />
@@ -204,7 +205,8 @@
     <TypeScriptCompile Include="Scripts\ts\hub.ts" />
     <TypeScriptCompile Include="Scripts\ts\main.ts" />
     <TypeScriptCompile Include="Scripts\ts\gamemap.ts" />
-    <TypeScriptCompile Include="Scripts\ts\map_manager.ts" />
+    <TypeScriptCompile Include="Scripts\ts\Manager\map_manager.ts" />
+    <TypeScriptCompile Include="Scripts\ts\Manager\weapon_manager.ts" />
     <TypeScriptCompile Include="Scripts\ts\tinygunsgame.ts" />
     <TypeScriptCompile Include="Scripts\ts\Entity\weapon.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
