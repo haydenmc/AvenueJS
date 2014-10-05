@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AvenueJS</title>
+	@Styles.Render("~/Content/css")
+</head>
+<body>
+    <div id="content"></div>
+
+	@Scripts.Render("~/bundles/js")
+	@Scripts.Render("~/bundles/ts")
+	<script src="~/signalr/hubs"></script>
+</body>
+</html>
